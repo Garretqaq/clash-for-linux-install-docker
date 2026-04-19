@@ -23,6 +23,12 @@ _apply_rc
 
 _merge_config
 _detect_proxy_port
+
+if [ "${CLASH_NONINTERACTIVE:-0}" = "1" ]; then
+    _okcat '🤖' '非交互模式安装完成'
+    exit 0
+fi
+
 clashui
 clashsecret "$(_get_random_val)" >/dev/null
 clashsecret
