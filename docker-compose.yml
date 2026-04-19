@@ -1,6 +1,6 @@
 services:
   clash:
-    image: songguangzhi/clash-for-docker:latest
+    image: registry.cn-hangzhou.aliyuncs.com/dato/clash-for-docker:latest
     container_name: clash
     restart: unless-stopped
     ports:

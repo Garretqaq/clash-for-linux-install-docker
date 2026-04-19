@@ -8,7 +8,7 @@
 
 ## Docker 快速开始
 
-- 镜像地址：`songguangzhi/clash-for-docker`
+- 镜像地址：`registry.cn-hangzhou.aliyuncs.com/dato/clash-for-docker`
 - 启动与端口说明文档：[`DOCKER.md`](DOCKER.md)
 
 ## 鉁?鍔熻兘鐗规€?

@@ -4,12 +4,12 @@
 
 ## 镜像地址
 
-- Docker Hub: `songguangzhi/clash-for-docker`
+- Aliyun Registry: `registry.cn-hangzhou.aliyuncs.com/dato/clash-for-docker`
 
 ## 1. 拉取镜像
 
 ```bash
-docker pull songguangzhi/clash-for-docker:latest
+docker pull registry.cn-hangzhou.aliyuncs.com/dato/clash-for-docker:latest
 ```
 
 - 多架构已支持：`linux/amd64`、`linux/arm64`
@@ -27,7 +27,7 @@ docker run -d \
   -p 1053:1053/udp \
   -e CLASH_CONFIG_URL="你的订阅链接" \
   -v clash-data:/opt/clashctl/resources \
-  songguangzhi/clash-for-docker:latest
+  registry.cn-hangzhou.aliyuncs.com/dato/clash-for-docker:latest
 ```
 
 启动后：
