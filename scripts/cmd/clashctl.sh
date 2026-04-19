@@ -284,7 +284,7 @@ _get_secret() {
     "$BIN_YQ" '.secret // ""' "$CLASH_CONFIG_RUNTIME"
 }
 function clashsecret() {
-    case "$1" in
+    case "${1:-}" in
     -h | --help)
         cat <<EOF
 
@@ -378,7 +378,7 @@ _tunon() {
 }
 
 function clashtun() {
-    case "$1" in
+    case "${1:-}" in
     -h | --help)
         cat <<EOF
 
@@ -407,7 +407,7 @@ EOF
 }
 
 function clashmixin() {
-    case "$1" in
+    case "${1:-}" in
     -h | --help)
         cat <<EOF
 
@@ -505,7 +505,7 @@ EOF
 }
 
 function clashsub() {
-    case "$1" in
+    case "${1:-}" in
     add)
         shift
         _sub_add "$@"
@@ -683,7 +683,7 @@ _sub_log() {
 }
 
 function clashctl() {
-    case "$1" in
+    case "${1:-}" in
     on)
         shift
         clashon
