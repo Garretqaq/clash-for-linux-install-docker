@@ -64,7 +64,7 @@ _detect_proxy_port() {
             "$BIN_YQ" -i ".${yaml_key} = $newPort" "$CLASH_CONFIG_MIXIN"
         }
     done
-    ((count)) && _merge_config
+    ((count)) && _merge_config || true
 }
 
 function clashon() {
