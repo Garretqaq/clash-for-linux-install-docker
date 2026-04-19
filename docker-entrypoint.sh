@@ -44,6 +44,6 @@ fi
 _merge_config
 clashon
 
-LOG_FILE="${CLASH_RESOURCES_DIR}/${KERNEL_NAME}.log"
+LOG_FILE="/var/log/${KERNEL_NAME}.log"
 touch "$LOG_FILE"
 exec tail -F "$LOG_FILE"

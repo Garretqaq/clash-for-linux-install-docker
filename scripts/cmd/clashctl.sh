@@ -74,7 +74,7 @@ function clashon() {
         _failcat '启动失败: 执行 clashlog 查看日志'
         return 1
     }
-    clashproxy >/dev/null && _set_system_proxy
+    clashproxy >/dev/null && _set_system_proxy || true
     _okcat '已开启代理环境'
 }
 
