@@ -109,7 +109,7 @@ clashrestart() {
 }
 
 function clashproxy() {
-    case "$1" in
+    case "${1:-}" in
     -h | --help)
         cat <<EOF
 
