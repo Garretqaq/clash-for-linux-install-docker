@@ -15,8 +15,3 @@ services:
       CLASH_ALLOW_LAN: "${CLASH_ALLOW_LAN:-true}"
       CLASH_MIXED_PORT: "${CLASH_MIXED_PORT:-7890}"
       CLASH_DASHBOARD_PORT: "${CLASH_DASHBOARD_PORT:-9090}"
-    volumes:
-      - clash-data:/opt/clashctl/resources
-
-volumes:
-  clash-data:
