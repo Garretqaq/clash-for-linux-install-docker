@@ -8,7 +8,17 @@ if [ ! -f "${CLASH_BASE_DIR}/.env" ]; then
     exit 1
 fi
 
+# Preserve Docker env vars before sourcing .env (which may override them with empty values)
+_CLASH_CONFIG_URL="${CLASH_CONFIG_URL:-}"
+_CLASH_SECRET="${CLASH_SECRET:-}"
+_CLASH_AUTH="${CLASH_AUTH:-}"
+
 . "${CLASH_BASE_DIR}/scripts/cmd/clashctl.sh"
+
+# Restore Docker env vars so .env empty values don't win
+[ -n "${_CLASH_CONFIG_URL}" ] && CLASH_CONFIG_URL="${_CLASH_CONFIG_URL}"
+[ -n "${_CLASH_SECRET}" ] && CLASH_SECRET="${_CLASH_SECRET}"
+[ -n "${_CLASH_AUTH}" ] && CLASH_AUTH="${_CLASH_AUTH}"
 
 to_bool() {
     case "${1:-}" in
