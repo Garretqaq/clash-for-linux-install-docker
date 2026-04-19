@@ -1,0 +1,22 @@
+services:
+  clash:
+    image: songguangzhi/clash-for-docker:latest
+    container_name: clash
+    restart: unless-stopped
+    ports:
+      - "${CLASH_MIXED_PORT:-7890}:${CLASH_MIXED_PORT:-7890}"
+      - "${CLASH_DASHBOARD_PORT:-9090}:${CLASH_DASHBOARD_PORT:-9090}"
+      - "1053:1053/tcp"
+      - "1053:1053/udp"
+    environment:
+      CLASH_CONFIG_URL: "${CLASH_CONFIG_URL:-}"
+      CLASH_SECRET: "${CLASH_SECRET:-}"
+      CLASH_AUTH: "${CLASH_AUTH:-}"
+      CLASH_ALLOW_LAN: "${CLASH_ALLOW_LAN:-true}"
+      CLASH_MIXED_PORT: "${CLASH_MIXED_PORT:-7890}"
+      CLASH_DASHBOARD_PORT: "${CLASH_DASHBOARD_PORT:-9090}"
+    volumes:
+      - clash-data:/opt/clashctl/resources
+
+volumes:
+  clash-data:
